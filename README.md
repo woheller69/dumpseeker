@@ -15,13 +15,13 @@
 | [<img src="https://github.com/woheller69/gptassist/blob/master/fastlane/metadata/android/en-US/images/icon.png" width="50">](https://f-droid.org/packages/org.woheller69.gptassist/) |  |  |
 
 
-# LavSeeker
+# DumpSeeker
 
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="150"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="150"/> 
 
-LavSeeker provides information about lavatories for your locations.
-Clicking on a lavatory in the list shows the lavatory in a map application.
-You can also allow the app to use GPS. If you do so the position can be updated and the first tab in the app will show lavatories for your current location.
+DumpSeeker provides information about sanitary dump stations for your locations.
+A long click on a station in the list shows the dump station in a map application.
+You can also allow the app to use GPS. If you do so the position can be updated and the first tab in the app will show sanitary dump stations for your current location.
 (This will overwrite the city in your first tab.)
 
 The data is provided by OpenStreetMap.
