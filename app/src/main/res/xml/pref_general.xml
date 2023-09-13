@@ -1,0 +1,51 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/settings_title_display_options">
+
+        <ListPreference
+            app:useSimpleSummaryProvider="true"
+            android:defaultValue="30000"
+            android:entries="@array/searchRadiusArray"
+            android:entryValues="@array/searchRadiusValues"
+            android:key="pref_searchRadius"
+            android:title="@string/settings_search_radius" />
+
+        <SwitchPreference
+            android:key="pref_DarkMode"
+            android:title="@string/settings_darkmode"
+            android:defaultValue="false"
+            />
+
+        <SwitchPreference
+            android:key="pref_TimeFormat"
+            android:title="@string/settings_time24h"
+            android:summary="@string/summary_time24h"
+            android:defaultValue="true"
+            />
+
+        <SwitchPreference
+            android:key="pref_map"
+            android:title="@string/settings_map"
+            android:defaultValue="true"
+            />
+
+        <SwitchPreference
+            android:key="pref_Debug"
+            android:title="Debug"
+            android:defaultValue="false"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_position">
+        <SwitchPreference
+            android:key="pref_GPS"
+            android:title="@string/settings_GPS_position"
+            android:summary="@string/settings_GPS_summary"
+            android:defaultValue="false"
+            />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

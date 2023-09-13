@@ -1,0 +1,14 @@
+DumpSeeker zeigt sanitäre Entsorgungsstationen, die in OpenStreetMap eingetragen sind.
+Durch langes Klicken auf eine Station in der Liste wird die Entsorgungsstation in einer Kartenanwendung angezeigt.
+Sie können der App auch erlauben, GPS zu verwenden.
+Im ersten Tab in der App werden dann die Entsorgungsstationen für Ihren aktuellen Standort angezeigt.
+(Dadurch wird die Stadt in Ihrem ersten Tab überschrieben.)
+
+Die Daten werden von OpenStreetMap unter der Open Database Licence (ODbL) bereitgestellt.
+
+Minimale Berechtigungen:
+DumpSeeker benötigt nur ein Minimum an Berechtigungen, nämlich nur die INTERNET-Berechtigung.
+Diese ist nötig, um HTTP-Anfragen an entfernte Server zu stellen, um Daten zu erhalten.
+Optional: Berechtigung für GPS.
+
+

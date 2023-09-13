@@ -1,0 +1,1 @@
+DumpSeeker zeigt sanitäre Entsorgungsstationen, die in OpenStreetMap eingetragen sind

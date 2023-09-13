@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 33
+
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId "org.woheller69.dumpseeker"
+        minSdkVersion 26
+        targetSdkVersion 33
+        versionCode 10
+        versionName "1.0"
+
+        buildConfigField "String", "BASE_URL", "\"https://overpass-api.de/api/interpreter\""
+        buildConfigField "String", "BASE_URL2","\"https://nominatim.openstreetmap.org/\""
+        buildConfigField "String", "GITHUB_URL","\"https://github.com/woheller69/dumpseeker/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.woheller69:AndroidAddressFormatter:cdba8fca24bc5faf9ec8be80cdeb366b75460031'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1" //needed due to duplicate class error
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1" //needed due to duplicate class error
+    implementation 'org.osmdroid:osmdroid-android:6.1.13'
+    implementation 'com.github.woheller69:OmGeoDialog:V1.5'
+}
