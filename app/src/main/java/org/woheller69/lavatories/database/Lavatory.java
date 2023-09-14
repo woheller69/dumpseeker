@@ -8,6 +8,7 @@ public class Lavatory {
     private int id;
     private int city_id;
     private long timestamp;
+    private boolean greyWater;
     private boolean chemicalToilet;
     private boolean waterPoint;
     private boolean paid;
@@ -24,10 +25,11 @@ public class Lavatory {
     public Lavatory() {
     }
 
-    public Lavatory(int id, int city_id, long timestamp, boolean chemicalToilet, boolean waterPoint, boolean paid, String operator, String openingHours, String address1, String address2, double distance, double latitude, double longitude, String uuid) {
+    public Lavatory(int id, int city_id, long timestamp, boolean greyWater, boolean chemicalToilet, boolean waterPoint, boolean paid, String operator, String openingHours, String address1, String address2, double distance, double latitude, double longitude, String uuid) {
         this.id = id;
         this.city_id = city_id;
         this.timestamp = timestamp;
+        this.greyWater = greyWater;
         this.chemicalToilet = chemicalToilet;
         this.waterPoint = waterPoint;
         this.paid = paid;
@@ -63,6 +65,14 @@ public class Lavatory {
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public boolean isGreyWater() {
+        return greyWater;
+    }
+
+    public void setGreyWater(boolean greyWater) {
+        this.greyWater = greyWater;
     }
 
     public boolean isChemicalToilet() {

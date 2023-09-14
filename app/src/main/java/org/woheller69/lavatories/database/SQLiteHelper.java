@@ -37,8 +37,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String LAVATORY_ID = "lavatory_id";
     private static final String LAVATORY_CITY_ID = "city_id";
     private static final String LAVATORY_TIMESTAMP = "timestamp";
-    private static final String LAVATORY_WHEELCHAIR = "wheelchair";
-    private static final String LAVATORY_BABY_CHANGING = "baby_changing";
+    private static final String LAVATORY_GREYWATER = "greywater";
+    private static final String LAVATORY_CHEMICALTOILET = "chemical_toilet";
+    private static final String LAVATORY_WATERPOINT = "water_point";
     private static final String LAVATORY_PAID = "paid";
     private static final String LAVATORY_OPERATOR = "brand";
     private static final String LAVATORY_OPENING_HOURS = "name";
@@ -57,8 +58,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             LAVATORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             LAVATORY_CITY_ID + " INTEGER," +
             LAVATORY_TIMESTAMP + " LONG NOT NULL," +
-            LAVATORY_WHEELCHAIR + " BIT," +
-            LAVATORY_BABY_CHANGING + " BIT," +
+            LAVATORY_GREYWATER + " BIT," +
+            LAVATORY_CHEMICALTOILET + " BIT," +
+            LAVATORY_WATERPOINT + " BIT," +
             LAVATORY_PAID + " BIT," +
             LAVATORY_OPERATOR + " VARCHAR(200) NOT NULL," +
             LAVATORY_OPENING_HOURS + " VARCHAR(200) NOT NULL," +
@@ -247,8 +249,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(LAVATORY_CITY_ID, lavatory.getCity_id());
         values.put(LAVATORY_TIMESTAMP, lavatory.getTimestamp());
-        values.put(LAVATORY_WHEELCHAIR, lavatory.isChemicalToilet());
-        values.put(LAVATORY_BABY_CHANGING, lavatory.isWaterPoint());
+        values.put(LAVATORY_GREYWATER, lavatory.isGreyWater());
+        values.put(LAVATORY_CHEMICALTOILET, lavatory.isChemicalToilet());
+        values.put(LAVATORY_WATERPOINT, lavatory.isWaterPoint());
         values.put(LAVATORY_PAID, lavatory.isPaid());
         values.put(LAVATORY_OPERATOR, lavatory.getOperator());
         values.put(LAVATORY_OPENING_HOURS, lavatory.getOpeningHours());
@@ -282,8 +285,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 new String[]{LAVATORY_ID,
                         LAVATORY_CITY_ID,
                         LAVATORY_TIMESTAMP,
-                        LAVATORY_WHEELCHAIR,
-                        LAVATORY_BABY_CHANGING,
+                        LAVATORY_GREYWATER,
+                        LAVATORY_CHEMICALTOILET,
+                        LAVATORY_WATERPOINT,
                         LAVATORY_PAID,
                         LAVATORY_OPERATOR,
                         LAVATORY_OPENING_HOURS,
@@ -305,17 +309,18 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 lavatory.setId(Integer.parseInt(cursor.getString(0)));
                 lavatory.setCity_id(Integer.parseInt(cursor.getString(1)));
                 lavatory.setTimestamp(Long.parseLong(cursor.getString(2)));
-                lavatory.setChemicalToilet(cursor.getString(3).equals("1"));
-                lavatory.setWaterPoint(cursor.getString(4).equals("1"));
-                lavatory.setPaid(cursor.getString(5).equals("1"));
-                lavatory.setOperator(cursor.getString(6));
-                lavatory.setOpeningHours(cursor.getString(7));
-                lavatory.setAddress1(cursor.getString(8));
-                lavatory.setAddress2(cursor.getString(9));
-                lavatory.setDistance(Double.parseDouble(cursor.getString(10)));
-                lavatory.setLatitude(Double.parseDouble(cursor.getString(11)));
-                lavatory.setLongitude(Double.parseDouble(cursor.getString(12)));
-                lavatory.setUuid(cursor.getString(13));
+                lavatory.setGreyWater(cursor.getString(3).equals("1"));
+                lavatory.setChemicalToilet(cursor.getString(4).equals("1"));
+                lavatory.setWaterPoint(cursor.getString(5).equals("1"));
+                lavatory.setPaid(cursor.getString(6).equals("1"));
+                lavatory.setOperator(cursor.getString(7));
+                lavatory.setOpeningHours(cursor.getString(8));
+                lavatory.setAddress1(cursor.getString(9));
+                lavatory.setAddress2(cursor.getString(10));
+                lavatory.setDistance(Double.parseDouble(cursor.getString(11)));
+                lavatory.setLatitude(Double.parseDouble(cursor.getString(12)));
+                lavatory.setLongitude(Double.parseDouble(cursor.getString(13)));
+                lavatory.setUuid(cursor.getString(14));
                 list.add(lavatory);
             } while (cursor.moveToNext());
 

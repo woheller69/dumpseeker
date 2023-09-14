@@ -67,5 +67,6 @@
     <string name="settings_map">Show map</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="infoOpenStreetMap">Information is fetched from OpenStreetMap</string>
+    <string name="customers_only">Customers only</string>
 
 </resources>

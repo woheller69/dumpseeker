@@ -5,6 +5,7 @@ import android.content.Context;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import org.woheller69.lavatories.R;
 import org.woheller69.lavatories.database.Lavatory;
 import org.woheller69.lavatories.api.IDataExtractor;
 
@@ -47,11 +48,11 @@ public class OSMDataExtractor implements IDataExtractor {
             if (tags.has("amenity") && tags.getString("amenity").contains("sanitary_dump_station")) {
                 if (tags.has("operator")) lavatory.setOperator(tags.getString("operator"));
                 else if (tags.has("name")) lavatory.setOperator(tags.getString("name"));
-                if (tags.has("network")) lavatory.setOperator(lavatory.getOperator()+" "+tags.getString("network"));  //Todo: Make separate database item and TextView
+                if (tags.has("network")) lavatory.setOperator(lavatory.getOperator()+" "+tags.getString("network"));
                 if (tags.has("opening_hours")) lavatory.setOpeningHours(tags.getString("opening_hours"));
                 if (tags.has("access")){
-                    if (tags.getString("access").contains("customers") || tags.getString("access").contains("destination")) lavatory.setOpeningHours("Customers only " + lavatory.getOpeningHours()); //TODO extract string resource
-                    else if (tags.getString("access").contains("network")) lavatory.setOpeningHours("Network only " + lavatory.getOpeningHours());  //TODO extract string resource
+                    if (tags.getString("access").contains("customers") || tags.getString("access").contains("destination")) lavatory.setOpeningHours(context.getString(R.string.customers_only) + " " + lavatory.getOpeningHours());
+                    else if (tags.getString("access").contains("network")) lavatory.setOpeningHours(context.getString(R.string.customers_only) + " " + lavatory.getOpeningHours());
                     else if (!tags.getString(("access")).contains("yes")) return null ;
                 }
 
@@ -67,6 +68,10 @@ public class OSMDataExtractor implements IDataExtractor {
                 if ((tags.has("sanitary_dump_station:fee") && !tags.getString(("sanitary_dump_station:fee")).equals("no")) ||
                     (tags.has("fee") && !tags.getString(("fee")).equals("no"))) lavatory.setPaid(true);
 
+                if ((tags.has("sanitary_dump_station:grey_water") && !tags.getString(("sanitary_dump_station:grey_water")).equals("no")) ||
+                        (tags.has("grey_water") && !tags.getString(("grey_water")).equals("no")) ||
+                        (!tags.has("sanitary_dump_station:grey_water") && (!tags.has("grey_water")))) lavatory.setGreyWater(true);
+
                 return lavatory;
             } else if (tags.has("sanitary_dump_station") && tags.getString("sanitary_dump_station").contains("yes")){
                 if (tags.has("name")) lavatory.setOperator(tags.getString("name"));
@@ -74,8 +79,8 @@ public class OSMDataExtractor implements IDataExtractor {
 
 
                 if (tags.has("access")){
-                    if (tags.getString("access").contains("customers") || tags.getString("access").contains("destination")) lavatory.setOpeningHours("Customers only " + lavatory.getOpeningHours()); //TODO extract string resource
-                    else if (tags.getString("access").contains("network")) lavatory.setOpeningHours("Network only " + lavatory.getOpeningHours());  //TODO extract string resource
+                    if (tags.getString("access").contains("customers") || tags.getString("access").contains("destination")) lavatory.setOpeningHours(context.getString(R.string.customers_only) + " " + lavatory.getOpeningHours());
+                    else if (tags.getString("access").contains("network")) lavatory.setOpeningHours(context.getString(R.string.customers_only) + " " + lavatory.getOpeningHours());
                     else if (!tags.getString(("access")).contains("yes")) return null ;
                 }
 
@@ -90,6 +95,10 @@ public class OSMDataExtractor implements IDataExtractor {
 
                 if ((tags.has("sanitary_dump_station:fee") && !tags.getString(("sanitary_dump_station:fee")).equals("no")) ||
                         (tags.has("fee") && !tags.getString(("fee")).equals("no"))) lavatory.setPaid(true);
+
+                if ((tags.has("sanitary_dump_station:grey_water") && !tags.getString(("sanitary_dump_station:grey_water")).equals("no")) ||
+                        (tags.has("grey_water") && !tags.getString(("grey_water")).equals("no")) ||
+                        (!tags.has("sanitary_dump_station:grey_water") && (!tags.has("grey_water")))) lavatory.setGreyWater(true);
 
                 return lavatory;
             } else {

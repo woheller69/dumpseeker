@@ -67,8 +67,9 @@ public class LavatoriesAdapter extends RecyclerView.Adapter<LavatoriesAdapter.La
         else holder.openingHours.setVisibility(View.GONE);
 
         if (!lavatoryList.get(position).isPaid()) holder.paid.setImageIcon(null); else holder.paid.setImageResource(R.drawable.ic_paid_black_24dp);
-        if (!lavatoryList.get(position).isChemicalToilet()) holder.wheelchair.setImageIcon(null); else holder.wheelchair.setImageResource(R.drawable.ic_chemical_toilet_24dp);
-        if (!lavatoryList.get(position).isWaterPoint()) holder.babyChanging.setImageIcon(null); else holder.babyChanging.setImageResource(R.drawable.ic_water_point_24dp);
+        if (!lavatoryList.get(position).isChemicalToilet()) holder.chemicalToilet.setImageIcon(null); else holder.chemicalToilet.setImageResource(R.drawable.ic_chemical_toilet_24dp);
+        if (!lavatoryList.get(position).isWaterPoint()) holder.waterPoint.setImageIcon(null); else holder.waterPoint.setImageResource(R.drawable.ic_water_point_24dp);
+        if (!lavatoryList.get(position).isGreyWater()) holder.greyWater.setImageIcon(null); else holder.greyWater.setImageResource(R.drawable.ic_dumpstation_24dp);
     }
 
     @Override
@@ -97,8 +98,9 @@ public class LavatoriesAdapter extends RecyclerView.Adapter<LavatoriesAdapter.La
         TextView openingHours;
         TextView dist;
         TextView address;
-        ImageView wheelchair;
-        ImageView babyChanging;
+        ImageView greyWater;
+        ImageView chemicalToilet;
+        ImageView waterPoint;
         ImageView paid;
 
         LavatoryViewHolder(View itemView) {
@@ -108,8 +110,9 @@ public class LavatoriesAdapter extends RecyclerView.Adapter<LavatoriesAdapter.La
             operator = itemView.findViewById(R.id.lavatory_operator);
             dist = itemView.findViewById(R.id.lavatory_dist);
             address = itemView.findViewById(R.id.lavatory_address);
-            wheelchair = itemView.findViewById(R.id.lavatory_chemical_toilet);
-            babyChanging = itemView.findViewById(R.id.lavatory_water_point);
+            greyWater = itemView.findViewById(R.id.lavatory_grey_water);
+            chemicalToilet = itemView.findViewById(R.id.lavatory_chemical_toilet);
+            waterPoint = itemView.findViewById(R.id.lavatory_water_point);
             paid = itemView.findViewById(R.id.lavatory_paid);
         }
     }
