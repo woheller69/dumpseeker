@@ -1,1 +1,1 @@
-DumpSeeker shows sanitary dump stations listed in OpenStreetMap
+DumpSeeker shows sanitary dump stations for camper vans listed in OpenStreetMap

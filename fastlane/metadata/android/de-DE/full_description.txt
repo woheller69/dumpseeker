@@ -1,4 +1,4 @@
-DumpSeeker zeigt sanitäre Entsorgungsstationen, die in OpenStreetMap eingetragen sind.
+DumpSeeker zeigt sanitäre Entsorgungsstationen für Wohnmobile, die in OpenStreetMap eingetragen sind.
 Durch langes Klicken auf eine Station in der Liste wird die Entsorgungsstation in einer Kartenanwendung angezeigt.
 Sie können der App auch erlauben, GPS zu verwenden.
 Im ersten Tab in der App werden dann die Entsorgungsstationen für Ihren aktuellen Standort angezeigt.

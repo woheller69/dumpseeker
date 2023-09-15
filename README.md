@@ -19,14 +19,14 @@
 
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="150"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="150"/> 
 
-DumpSeeker provides information about sanitary dump stations for your locations.
+DumpSeeker shows sanitary dump stations for camper vans listed in OpenStreetMap.
 A long click on a station in the list shows the dump station in a map application.
 You can also allow the app to use GPS. If you do so the position can be updated and the first tab in the app will show sanitary dump stations for your current location.
 (This will overwrite the city in your first tab.)
 
 The data is provided by OpenStreetMap.
 
-<a href="https://f-droid.org/packages/org.woheller69.lavatories"><img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="100"></a>
+<a href="https://f-droid.org/packages/org.woheller69.dumpseeker"><img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="100"></a>
 
 
 ## License

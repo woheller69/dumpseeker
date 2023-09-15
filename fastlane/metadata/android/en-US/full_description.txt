@@ -1,4 +1,4 @@
-DumpSeeker shows sanitary dump stations listed in OpenStreetMap.
+DumpSeeker shows sanitary dump stations for camper vans listed in OpenStreetMap.
 A long click on a station in the list will show the dump station in a map application.
 You can also allow the app to use GPS.
 The dump stations for your current location are then displayed in the first tab in the app.
