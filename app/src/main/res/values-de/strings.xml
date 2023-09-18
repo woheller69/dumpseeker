@@ -65,4 +65,6 @@
     <string name="settings_map">Karte anzeigen</string>
     <string name="infoOpenStreetMap">Die Informationen stammen von OpenStreetMap.</string>
     <string name="customers_only">Nur für Kunden</string>
+    <string name="settings_server_urls">Server URLs</string>
+    <string name="settings_server_summary">Nur ändern, wenn Sie Ihre eigenen Server betreiben wollen</string>
 </resources>

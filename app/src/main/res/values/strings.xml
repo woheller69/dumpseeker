@@ -68,5 +68,7 @@
     <string name="github" translatable="false">GitHub</string>
     <string name="infoOpenStreetMap">Information is fetched from OpenStreetMap</string>
     <string name="customers_only">Customers only</string>
+    <string name="settings_server_urls">Server URLs</string>
+    <string name="settings_server_summary">Only change if you want to host your own servers</string>
 
 </resources>
