@@ -1,1 +1,1 @@
-DumpSeeker zeigt sanitäre Entsorgungsstationen für Wohnmobile, die in OpenStreetMap eingetragen sind
+DumpSeeker zeigt sanitäre Entsorgungsstationen für Wohnmobile aus OpenStreetMap
