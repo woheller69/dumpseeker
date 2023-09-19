@@ -58,6 +58,16 @@
             android:key="pref_Overpass_URL"
             android:defaultValue="https://overpass-api.de/api/interpreter"
             />
+        <EditTextPreference
+            android:title="OpenStreetMap API"
+            android:key="pref_OsmTiles_URL"
+            android:defaultValue="https://tile.openstreetmap.org/"
+            />
+        <EditTextPreference
+            android:title="Open-Meteo Geocoding API"
+            android:key="pref_OMGEO_URL"
+            android:defaultValue="https://geocoding-api.open-meteo.com/"
+            />
     </PreferenceCategory>
 
 

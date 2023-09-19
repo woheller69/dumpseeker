@@ -18,17 +18,17 @@ import org.woheller69.lavatories.R;
 import org.woheller69.lavatories.database.City;
 import org.woheller69.lavatories.database.CityToWatch;
 import org.woheller69.lavatories.database.SQLiteHelper;
+import org.woheller69.lavatories.dialogs.AddLocationDialogOmGeocodingAPI;
 import org.woheller69.lavatories.ui.RecycleList.RecyclerItemClickListener;
 import org.woheller69.lavatories.ui.RecycleList.RecyclerOverviewListAdapter;
 import org.woheller69.lavatories.ui.RecycleList.SimpleItemTouchHelperCallback;
-import org.woheller69.omgeodialog.OmGeoDialog;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 //in-App: where cities get added & sorted
-public class ManageLocationsActivity extends NavigationActivity implements OmGeoDialog.OmGeoDialogResult{
+public class ManageLocationsActivity extends NavigationActivity {
 
     private final String DEBUG_TAG = "main_activity_debug";
     private SQLiteHelper database;
@@ -104,21 +104,18 @@ public class ManageLocationsActivity extends NavigationActivity implements OmGeo
 
         FloatingActionButton addFab1 = (FloatingActionButton) findViewById(R.id.fabAddLocation);
 
-            if (addFab1 != null) {
+        if (addFab1 != null) {
 
-                addFab1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        OmGeoDialog addLocationDialog = new OmGeoDialog();
-                        addLocationDialog.setNegativeButtonText(getString(android.R.string.cancel));
-                        addLocationDialog.setPositiveButtonText(getString(android.R.string.ok));
-                        addLocationDialog.setTitle(getString(R.string.dialog_add_label));
-                        addLocationDialog.show(fragmentManager, "AddLocationDialog");
-                        getSupportFragmentManager().executePendingTransactions();
-                    }
-                });
-            }
+            addFab1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    AddLocationDialogOmGeocodingAPI addLocationDialog = new AddLocationDialogOmGeocodingAPI();
+                    addLocationDialog.show(fragmentManager, "AddLocationDialog");
+                    getSupportFragmentManager().executePendingTransactions();
+                }
+            });
+        }
     }
 
     @Override
@@ -136,7 +133,6 @@ public class ManageLocationsActivity extends NavigationActivity implements OmGeo
         return R.id.nav_manage;
     }
 
-
     public void addCityToList(City city) {
         CityToWatch newCity=convertCityToWatched(city);
         long id=database.addCityToWatch(newCity);
@@ -153,15 +149,5 @@ public class ManageLocationsActivity extends NavigationActivity implements OmGeo
                 selectedCity.getCityId(), selectedCity.getLongitude(),selectedCity.getLatitude(),
                 selectedCity.getCityName()
         );
-    }
-
-    @Override
-    public void onOmGeoDialogResult(org.woheller69.omgeodialog.City city) {
-        City newCity = new City();
-        newCity.setCityName(city.getCityName());
-        newCity.setCountryCode(city.getCountryCode());
-        newCity.setLongitude(city.getLongitude());
-        newCity.setLatitude(city.getLatitude());
-        addCityToList(newCity);
     }
 }
