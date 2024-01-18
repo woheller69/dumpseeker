@@ -33,7 +33,7 @@ The data is provided by OpenStreetMap.
 
 ## License
 
-This app is licensed under the GPLv3.
+This app is licensed under the GPLv3, © woheller69.
 
 The app also uses:
 - Data is provided by OpenStreetMap under Open Database Licence, <a href='https://www.openstreetmap.org/copyright'>Open Database License</a>
