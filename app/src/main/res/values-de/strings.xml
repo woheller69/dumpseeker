@@ -67,4 +67,5 @@
     <string name="customers_only">Nur für Kunden</string>
     <string name="settings_server_urls">Server URLs</string>
     <string name="settings_server_summary">Nur ändern, wenn Sie Ihre eigenen Server betreiben wollen</string>
+    <string name="dialog_search_here">Ort ändern?</string>
 </resources>
