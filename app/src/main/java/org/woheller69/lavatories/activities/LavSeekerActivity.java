@@ -146,7 +146,7 @@ public class LavSeekerActivity extends NavigationActivity implements IUpdateable
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_city_gas_prices, menu);
+        getMenuInflater().inflate(R.menu.activity_lavseeker, menu);
 
         final Menu m = menu;
         SharedPreferences prefManager = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
